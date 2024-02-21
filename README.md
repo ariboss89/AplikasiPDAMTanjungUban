@@ -23,7 +23,7 @@ Customer Menu
 
 Fare Index Menu
 ---------------------
-<img width="600" alt="image" src="https://github.com/ariboss89/WebCPI/assets/33698186/f0965ce8-b263-4b04-afc6-7b5d169533ea">
+<img width="1440" alt="image" src="https://github.com/ariboss89/AplikasiPDAMTanjungUban/assets/33698186/09ddb533-9d11-45e1-8c0a-beea6d56b0f8">
 
 Fare Upsert Menu
 ---------------------

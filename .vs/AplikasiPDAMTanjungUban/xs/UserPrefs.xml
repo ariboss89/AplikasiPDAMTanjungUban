@@ -1,0 +1,49 @@
+﻿<Properties StartupConfiguration="{594D794C-7E35-4AB3-86EE-9EE1337B2F57}|https">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="AplikasiPDAMTanjungUban/wwwroot/js/Login.js">
+    <Files>
+      <File FileName="AplikasiPDAMTanjungUban/Views/Shared/_Layout.cshtml" Line="83" Column="109" />
+      <File FileName="AplikasiPDAMTanjungUban/Controllers/HomeController.cs" Line="52" Column="66" />
+      <File FileName="AplikasiPDAMTanjungUban/Views/Tarif/Upsert.cshtml" Line="4" Column="3" />
+      <File FileName="AplikasiPDAMTanjungUban/wwwroot/js/Login.js" Line="25" Column="48" />
+      <File FileName="AplikasiPDAMTanjungUban/Data/ApplicationDbContext.cs" Line="1" Column="1" />
+      <File FileName="AplikasiPDAMTanjungUban/Controllers/PelangganController.cs" Line="180" Column="55" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="AplikasiPDAMTanjungUban" expanded="True">
+            <Node name="AplikasiPDAMTanjungUban" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Data" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="SD" expanded="True" />
+              <Node name="ViewModel" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Home" expanded="True" />
+                <Node name="Laporan" expanded="True" />
+                <Node name="Pelanggan" expanded="True" />
+                <Node name="Pembayaran" expanded="True" />
+                <Node name="Shared" expanded="True" />
+                <Node name="Tarif" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="css" expanded="True" />
+                <Node name="js" expanded="True">
+                  <Node name="Login.js" selected="True" />
+                </Node>
+                <Node name="logos" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.AplikasiPDAMTanjungUban PreferredExecutionTarget="/Applications/Google Chrome.app" />
+</Properties>

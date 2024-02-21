@@ -1,0 +1,243 @@
+﻿@model AplikasiPDAMTanjungUban.ViewModel.PembayaranVM
+
+<body>
+    <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+        <div class="left-content show-up container" style="border:groove">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div style="display:flex;flex-direction:row; justify-content:center">
+                        <div class="col-lg-6 align-self-center">
+                            <div class="left-content show-up header-text wow fadeInLeft">
+                                <form method="post" class="">
+                                    <div class="row p-3">
+
+                                        <input id="txtId" type="hidden" asp-for="@Model.Pembayaran.Id" />
+
+                                        <div asp-validation-summary="ModelOnly"></div>
+
+                                        <div class="col-12 pt-2">
+
+                                            <div class="form-group row">
+                                                <div class="col-lg-4 col-12">
+                                                    <label style="font-weight:bold" asp-for="Pembayaran.Tanggal"></label>
+                                                </div>
+                                                <div class="col-lg-8 col-12">
+                                                    <input type="date" id="txtTanggal" style="text-align:center" asp-for="Pembayaran.Tanggal" class="form-control" />
+                                                    <span asp-validation-for="Pembayaran.Tanggal" class="text-danger"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group mb-2 mt-2 row">
+                                                <div style="font-weight:bold" class="col-lg-4 col-12">
+                                                    Nama Pelanggan
+                                                </div>
+                                                <div class="col-lg-8 col-12">
+
+                                                    <select id="cbPelanggan" onclick="" style="text-align:center" asp-for="@Model.Pembayaran.NamaPelanggan" onchange="Search()" asp-items="@Model.ListPelanggan" class="btn btn-primary form-select border-0 shadow">
+                                                        <option disabled selected>Pilih Pelanggan</option>
+                                                    </select>
+
+                                                    <span asp-validation-for="Pembayaran.NamaPelanggan" class="text-danger"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <div class="col-lg-4 col-12">
+                                                    <label style="font-weight:bold" asp-for="Pembayaran.IdPelanggan"></label>
+                                                </div>
+                                                <div class="col-lg-8 col-12">
+                                                    <input readonly id="txtIdPelanggan" style="text-align:center" asp-for="Pembayaran.IdPelanggan" class="form-control" />
+                                                    <span asp-validation-for="Pembayaran.IdPelanggan" class="text-danger"></span>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="form-group row mt-2">
+                                                <div class="col-lg-4 col-12">
+                                                    <label style="font-weight:bold" asp-for="Pembayaran.Alamat"></label>
+                                                </div>
+                                                <div class="col-lg-8 col-12">
+                                                    <textarea readonly id="txtAlamat" row="3" style="text-align:center" asp-for="Pembayaran.Alamat" class="form-control"></textarea>
+                                                    <span asp-validation-for="Pembayaran.Alamat" class="text-danger"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row mt-2">
+                                                <div class="col-lg-4 col-12">
+                                                    <label style="font-weight:bold" asp-for="Pembayaran.Golongan"></label>
+                                                </div>
+                                                <div class="col-lg-8 col-12">
+                                                    <input readonly id="txtGolongan" style="text-align:center" asp-for="Pembayaran.Golongan" class="form-control" />
+                                                    <span asp-validation-for="Pembayaran.Golongan" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-6" style="display:flex; flex-direction:column;justify-content:center">
+                            <div style="display:flex;flex-direction:row; justify-content:center">
+
+                                <div class="form-group column">
+                                    <div class="col-12 text-center">
+                                        <label style="font-weight:bold" asp-for="Pembayaran.Awal"></label>
+                                    </div>
+                                    <div class="col-12">
+                                        <input id="txtAwal" style="text-align:center" asp-for="Pembayaran.Awal" class="form-control" />
+                                        <span asp-validation-for="Pembayaran.Awal" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div style="margin-right:10px; margin-left:10px" class="col-4 form-group column">
+                                    <div class="col-12 text-center">
+                                        <label class="text-center" style="font-weight:bold" asp-for="Pembayaran.Akhir"></label>
+                                    </div>
+                                    <div>
+                                        <input id="txtAkhir" style="text-align:center" asp-for="Pembayaran.Golongan" class="form-control" />
+                                        <span asp-validation-for="Pembayaran.Akhir" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group column">
+                                    <div class="col-12 text-center">
+                                        <label class="text-center" style="font-weight:bold" asp-for="Pembayaran.Jumlah"></label>
+                                    </div>
+                                    <div class="col-12">
+                                        <input readonly id="txtPakai" style="text-align:center" asp-for="Pembayaran.Jumlah" class="form-control" />
+                                        <span asp-validation-for="Pembayaran.Jumlah" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="border:double" class="p-3 mt-2">
+                                <h3 class="mt-2 text-center">Tarif</h3>
+
+                                <div style="display:flex;flex-direction:row; justify-content:center">
+
+                                    <div class="form-group column mt-4">
+                                        <div class="col-12 text-center">
+                                            <label style="font-size: 13px; font-weight: bold" asp-for="Pembayaran.Biaya010"></label>
+                                        </div>
+                                        <div class="col-12">
+                                            <input readonly id="txtBiaya010" style="text-align:center" asp-for="Pembayaran.Biaya1120" class="form-control" />
+                                            <span asp-validation-for="Pembayaran.Biaya010" class="text-danger"></span>
+                                        </div>
+                                    </div>
+
+                                    <div style="margin-right:10px; margin-left:10px" class="form-group column mt-4">
+                                        <div class="col-12 text-center">
+                                            <label class="text-center" style="font-size: 13px; font-weight: bold" asp-for="Pembayaran.Biaya1120"></label>
+                                        </div>
+                                        <div>
+                                            <input readonly id="txtBiaya1120" style="text-align:center" asp-for="Pembayaran.Biaya1120" class="form-control" />
+                                            <span asp-validation-for="Pembayaran.Biaya1120" class="text-danger"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group column mt-4">
+                                        <div class="col-12 text-center">
+                                            <label class="text-center" style="font-size:13px; font-weight:bold" asp-for="Pembayaran.Biaya2130"></label>
+                                        </div>
+                                        <div class="col-12">
+                                            <input readonly id="txtBiaya2130" style="text-align:center" asp-for="Pembayaran.Biaya2130" class="form-control" />
+                                            <span asp-validation-for="Pembayaran.Biaya2130" class="text-danger"></span>
+                                        </div>
+                                    </div>
+
+                                    <div style="margin-right:10px; margin-left:10px" class="form-group column mt-4">
+                                        <div class="col-12 text-center">
+                                            <label class="text-center" style="font-size: 14px; font-weight: bold" asp-for="Pembayaran.Biaya30"></label>
+                                        </div>
+                                        <div class="col-12">
+                                            <input readonly id="txtBiaya030" style="text-align:center" asp-for="Pembayaran.Biaya30" class="form-control" />
+                                            <span asp-validation-for="Pembayaran.Biaya30" class="text-danger"></span>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div style="display:flex;flex-direction:row; justify-content:center">
+
+                                    <div class="form-group column mt-4">
+                                        <div class="col-12 text-center">
+                                            <label class="text-center" style="font-size: 14px; font-weight: bold" asp-for="Pembayaran.Perawatan"></label>
+                                        </div>
+                                        <div class="col-12 col-sm-12">
+                                            <input id="txtPerawatan" style="text-align:center" asp-for="Pembayaran.Perawatan" class="form-control" />
+                                            <span asp-validation-for="Pembayaran.Perawatan" class="text-danger"></span>
+                                        </div>
+                                    </div>
+
+                                    <div style="margin-right:10px; margin-left:10px" class="form-group column mt-4">
+                                        <div class="col-12 col-sm-12 text-center">
+                                            <label class="text-center" style="font-size: 14px; font-weight: bold" asp-for="Pembayaran.BiayaAdmin"></label>
+                                        </div>
+                                        <div>
+                                            <input readonly id="txtAdmin" style="text-align:center" asp-for="Pembayaran.BiayaAdmin" class="form-control" />
+                                            <span asp-validation-for="Pembayaran.BiayaAdmin" class="text-danger"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group column mt-4">
+                                        <div class="col-12 col-sm-12 text-center">
+                                            <label class="text-center" style="font-size: 14px; font-weight: bold" asp-for="Pembayaran.Denda"></label>
+                                        </div>
+                                        <div class="col-12">
+                                            <input readonly id="txtDenda" style="text-align:center" asp-for="Pembayaran.Denda" class="form-control" />
+                                            <span asp-validation-for="Pembayaran.Denda" class="text-danger"></span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="left-content show-up header-text wow fadeInLeft">
+
+                        <p style="font-size:18px; font-weight:bold;" class="mt-4 text-center">Pembayaran Tagihan Ini diAnggap Sah Apabila Sudah di Tanda Tangani dan di Cap Basah Oleh Petugas</p>
+
+                        <div style="display:flex;flex-direction:row; justify-content:center">
+
+                            <div class="form-group col-8" style="display:flex; flex-direction:column;justify-content:center">
+                                <div class="col-12 text-center">
+                                    <label class="text-center" style="font-weight: bold" asp-for="Pembayaran.Total"></label>
+                                </div>
+                                <div class="col-12">
+                                    <input readonly id="txtTotal" style="text-align:center" asp-for="Pembayaran.Total" class="form-control" />
+                                    <span asp-validation-for="Pembayaran.Total" class="text-danger"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group col-4" style="margin-left:10px;">
+                                <div class="col-12 text-center mb-10" style="display:flex; flex-direction:column">
+                                    <label class="text-center" style="font-weight: bold"> Teluk Lobam</label>
+
+                                    <label class="text-center" style="font-weight: bold; margin-top:100px; margin-bottom:20px"> Bendahara</label>
+
+                                </div>
+
+                                <div class="col-12 text-center">
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="divCetak" class="left-content show-up mt-2">
+            <input value="CETAK STRUK" style="background-color:black" onclick="CetakStruk()" class="btn form-control" />
+        </div>
+    </div>
+</body>
+
+@section Scripts{
+    <script src="~/js/Pembayaran.js"></script>
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,86 @@
+﻿<html lang="en">
+
+<body>
+    @*main-banner*@
+    <div class="wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+
+        <div class="container">
+
+            <div class="right-image wow mb-2">
+                <div style="padding-top: 150px; display: flex; flex-direction: row">
+
+                    <div id="divHeader" style="border: inset; display: flex; flex-direction: row ">
+                        <img class="col-lg-2" src="~/logos/pdamlogo.png" />
+                        <div class="col-lg-10 text-center;" style="display:flex; flex-direction:column; justify-content:center; align-items:center">
+                            <p style="color:black; font-weight:bold; font-size:40px;text-align:center">LAPORAN BULANAN PDAM TIRTA KEPRI</p>
+                            <p style="color:black; margin-top:10px; font-weight:bold; font-size:40px;text-align:center">CABANG TANJUNG UBAN</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div id="divTanggal" class="right-image wow mb-2" style="display:flex;flex-direction:row; justify-content:space-around;">
+                <div class="mb-2" style="border:inset; padding:20px; display: flex; flex-direction: row; justify-content: space-around; align-items: center;">
+                    <div class="col-lg-5" style="display: flex; flex-direction: row; justify-content: center; font-weight: bold">
+
+                        <label class="col-lg-4">Tanggal Awal</label>
+
+
+                        <input id="tglAwal" class="col-lg-8" type="date" />
+
+                    </div>
+
+                    <div class="col-lg-5" style="display: flex; flex-direction: row; align-items: center; font-weight: bold; margin-left:10px ">
+
+                        <label class="col-lg-4">Tanggal Akhir</label>
+
+                        <input id="tglAkhir" class="col-lg-8" type="date" />
+                    </div>
+
+                    <input id="btnLaporan" value="Tampilkan Data" style=" margin-left: 10px" class="col-lg-2 btn btn-primary" onclick="TampilData()" type="button" />
+
+                </div>
+            </div>
+
+            <div style="padding:50px; border:inset">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                                <div class="p-2 border rounded" style="text-align:center;">
+                                    <table id="tblData" class="table table-striped table-bordered" style="width:100%; padding-top:10px">
+                                        <thead class="thead-dark">
+                                            <tr style="background-color: white">
+
+                                                <th class="text-center">Id Pelanggan</th>
+                                                <th class="text-center">Nama Pelanggan</th>
+                                                <th class="text-center">Golongan</th>
+                                                <th class="text-center">Tanggal</th>
+                                                <th class="text-center">Pemakaian</th>
+                                                <th class="text-center">Denda</th>
+                                                <th class="text-center">Total</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input id="btnCetak" value="Cetak Laporan" onclick="Print()" style=" margin-left: 10px" class="col-lg-12 btn btn-primary mt-4" type="button" />
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+</html>
+
+@section Scripts{
+    <script src="~/js/Laporan.js"></script>
+}
